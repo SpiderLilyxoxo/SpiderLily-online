@@ -1,0 +1,166 @@
+@use "../colors.scss" as *;
+
+body {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    overflow-x: hidden;
+}
+
+#root {
+    min-width: 100%;
+    min-height: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+    .dark {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-width: 100vw;
+        min-height: 100vh;
+        position: relative;
+        transition: background-color 200ms linear;
+        * {
+            color: var(--c1);
+            
+        }
+
+        background-color: var(--c5);
+        color: var(--c1);
+        span {
+            background-color: var(--c4);
+        }
+        .form-field {
+            background-color: var(--c5);
+            transition: background-color 200ms linear;
+            .contact-me {
+                background-color: var(--c4);
+                border-left: 1px solid var(--c4);
+                border-bottom: 1px solid var(--c4);
+                .contact-header {
+                    border-bottom: 1px solid var(--c4);
+                    .contact-me__container {
+                        text-decoration-color: #ae94dd;
+                    }
+                }
+            }
+            input, textarea {
+                background-color: var(--c5);
+                transition: background-color 200ms linear;
+            }
+            .btn {
+                background: var(--c5);  
+                color: var(--c1);
+                &::before {
+                    background: var(--c5);
+                    color: var(--c1);
+                }
+                &::after {
+                    background: var(--c6)
+                }
+            }
+            .checkmark-container {
+                background-color: var(--c6);
+                    svg {
+                        stroke: var(--c1);
+                    }
+            }
+            
+        }
+        @media (max-width: 620px) {
+            .header{
+                background-color: var(--c5);
+            }
+        }
+
+        .menu__item {
+            &:hover {
+                text-decoration: underline;
+                text-decoration-color: var(--c3);
+            }
+        }
+
+        .sun{
+            background-color: #ffdd81;
+            &:hover {
+                background-color: #ffdd81ef; 
+            }
+
+        }
+        .moon{
+            background-color: #bc81ff;
+            &:hover {
+                background-color: #af78ee;
+            }
+
+        }
+        .maincontent {
+            background-color: var(--c5);
+            transition: background-color 200ms linear;
+            .greetings__container {
+                background-color: var(--c4);
+                transition: background-color 200ms linear;
+            }
+            .about-me_btn {
+                background-color: var(--c3);
+                &:hover {
+                    background-color: #bb875ae1;
+                }
+            }
+            .work-btn:hover {
+                background-color: #bb875ae1;
+            }
+        }
+        
+        .app-list {
+            background-color: var(--c5);
+            border-left: 1px solid var(--c4);
+            transition: background-color 200ms linear;
+            .list-item{ 
+                transition: background-color 200ms linear;
+                &:hover {
+                    background-color: var(--c4);
+                }
+                .list-item__picture {
+                    border-bottom: 1px solid var(--c4);
+                    border-left: 1px solid var(--c4);
+                }
+                .about-item {
+                    .item-name {
+                        text-decoration-color: #ae94dd;
+                    }
+                    .item-status {
+                        color: #ae94dd;
+                    }
+                }
+            }
+        }
+        .work {
+            transition: color 200ms linear;
+            background-color: var(--c5);
+            transition: background-color 200ms linear;
+            .work-container {
+                .breadcrumbs {
+                    .breadcrumbs__item{
+                        border-bottom: 1px solid var(--c4);
+                    }
+                }
+                .desc {
+                    .desc-item {
+                        strong {
+                            color: #ae94dd;
+                        }
+                    .twitter-link {
+                        &:hover {
+                                text-decoration: underline;
+                                text-decoration-color: var(--c3);
+                            }
+                    }
+                    }
+                }
+            }
+        }
+    }

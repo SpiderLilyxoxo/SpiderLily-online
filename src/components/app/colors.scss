@@ -1,0 +1,18 @@
+    
+    html[data-theme="dark"] {
+        --c1: #F0ECF0;
+        --c2: #828283;
+        --c3: #BB875A;
+        --c4: #7E5B74;
+        --c5: #4A424C;
+        --c6: #2e2a30;
+    }
+
+    html[data-theme="light"] {
+        --c1: #4E4E4E;
+        --c2: #EAC8AF;
+        --c3: #EAC8AF;
+        --c4: #EAC8AF;
+        --c5: #FAF3DD;
+        --c6: #fffefd;
+    }
