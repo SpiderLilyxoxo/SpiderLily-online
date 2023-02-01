@@ -1,9 +1,10 @@
+
 import { NavLink } from "react-router-dom";
 
 import "./app-header.scss"
 
 
-const AppHeader = ({handleThemeClick}) => { 
+const AppHeader = ({handleThemeClick}, theme) => { 
 
     return (
     <div className="header">

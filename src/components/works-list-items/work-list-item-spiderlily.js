@@ -1,13 +1,22 @@
 import { NavLink } from "react-router-dom";
+import { motion } from "framer-motion";
+
 
 import "./works-list-item.scss";
 
 import pic from "../../pic/red spiderlily.jpg";
 
 const SpiderLily = () => {
+    const item = {
+        hidden: { opacity: 0 },
+        show: { opacity: 1 }
+      }
 
     return (
-        <div className="work">
+        <motion.div className="work"         
+        variants={item}
+        initial="hidden"
+        animate="show">
             <div className="work-container">
                 <img src={pic} alt="" className="item__picture"/>
                 <ul className="breadcrumbs">
@@ -23,7 +32,7 @@ const SpiderLily = () => {
                      <li className="desc-item">The design was mostly done by myself, based on <a href="https://www.craftz.dog" className="twitter-link"><strong>Takuya Matsuyama's</strong></a> work. I really hope that one day I will be like him...</li>
                 </ul>
             </div>
-        </div>
+        </motion.div>
     )
 }
 export default SpiderLily

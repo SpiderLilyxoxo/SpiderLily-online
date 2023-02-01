@@ -1,8 +1,9 @@
 import { NavLink } from "react-router-dom";
 import { Component } from 'react';
+import { motion } from "framer-motion";
 
-import SpiderLily from "../../pic/spiderlily.png"
-import SpiderYard from "../../pic/profile_page.png"
+import SpiderLilyPic from "../../pic/spiderlily.png"
+import SpiderYardPic from "../../pic/profile_page.png"
 import Books from "../../pic/books.jpg"
 
 import "./works-list.scss";
@@ -12,20 +13,40 @@ class WorksList extends Component {
         super(props);
         this.state = {
             data: [            
-                {name: "SpiderLily Homepage", description: "SpiderLily's page that you've seen already, so how it works...", picture: `${SpiderLily}`, navigation: "/works/spiderlily", status: "DONE", id: 1},
-                {name: "Spider Yard", description: "Spider Yard is a convenient platform for artists and their clients.", picture: `${SpiderYard}`, navigation: "/works/spideryard", status: "IN PROGRESS", id: 2},
+                {name: "SpiderLily Homepage", description: "SpiderLily's page that you've seen already, so how it works...", picture: `${SpiderLilyPic}`, navigation: "/works/spiderlily", status: "DONE", id: 1},
+                {name: "Spider Yard", description: "Spider Yard is a convenient platform for artists and their clients.", picture: `${SpiderYardPic}`, navigation: "/works/spideryard", status: "CANCELLED", id: 2},
                 {name: "Other Stuff", description: "My training projects", picture: `${Books}`, navigation: "/works/otherstuff", status: "", id: 3},
             ]
         }
     }
 
+
+    
+    render() {
+        const container = {
+            hidden: { 
+                opacity: 0,
+            },
+            show: {
+                opacity: 1,
+                transition: {
+                staggerChildren: .2
+                }
+            }
+        }
+        
+        const itemOne = {
+            hidden: { opacity: 0},
+            show: { opacity: 1 }
+        }
     
 
-    render() {
         const elements = this.state.data.map(item => {
             const {name, description, picture, navigation, status, id} = item;
             return (
-                <li className="items" key={id}>
+                <motion.li className="items" 
+                key={id}
+                variants={itemOne}>
                     <NavLink to={navigation} className="list-item">
                                 <img src={picture} alt="" className="list-item__picture"/>
                                 <div className="list-item__description-container">
@@ -36,14 +57,19 @@ class WorksList extends Component {
                                     <div className="item-text">{description}</div>
                                 </div>
                     </NavLink>
-                </li>
+                </motion.li>
             )
         })
 
         return (
-            <ul className="app-list">
+            <motion.ul 
+            className="app-list"
+            variants={container}
+            initial="hidden"
+            animate="show">
                 {elements}
-            </ul>
+            </motion.ul>
+
         )
     }
 }

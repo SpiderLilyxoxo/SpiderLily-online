@@ -1,13 +1,21 @@
 import { NavLink } from "react-router-dom";
+import { motion } from "framer-motion";
 
 import pic from "../../pic/spider-web.png";
 
 import "./works-list-item.scss"
 
 const SpiderYard = () => {
+    const item = {
+        hidden: { opacity: 0 },
+        show: { opacity: 1 }
+      }
     
     return (
-        <div className="work">
+        <motion.div className="work"         
+        variants={item}
+        initial="hidden"
+        animate="show">
         <div className="work-container">
             <img src={pic} alt="" className="item__picture"/>
             <ul className="breadcrumbs">
@@ -27,7 +35,7 @@ const SpiderYard = () => {
                 <li className="desc-item">Looking for more information? Check out our <a href="https://twitter.com/SpiderYardHQ" className="twitter-link"><strong>@twitter</strong></a> for all the latest news!</li>
             </ul>
         </div>
-    </div>
+    </motion.div>
     )
 }
 

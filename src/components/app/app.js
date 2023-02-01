@@ -33,6 +33,7 @@ const App = () => {
     }
 
     return  (
+      
       <Router>
       <div className="dark">
         <AppHeader handleThemeClick={handleThemeClick}/>
@@ -43,8 +44,10 @@ const App = () => {
             <Route path="/works/spiderlily" element={<SpiderLily/>}/>
             <Route path="/works/spideryard" element={<SpiderYard/>}/>
             <Route path="/works/otherstuff" element={<OtherStuff/>}/>
+            
+            <Route path="*" element={<MainContent/>}/>
           </Routes>
-        <BackGround handleThemeClick={theme}/>
+        <BackGround theme={theme}/>
       </div>
       </Router>
     );

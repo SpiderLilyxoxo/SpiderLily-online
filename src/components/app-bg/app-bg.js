@@ -2,10 +2,10 @@
 import "./app-bg.scss";
 
 const BackGround = (theme) => {
-
+    
     function createCube() {
-        const blocks = document.querySelector(".blocks");
         const cube = document.createElement("span");
+        const blocks = document.querySelector(".blocks");
     
         let size = Math.random() * 80;
     
@@ -18,23 +18,27 @@ const BackGround = (theme) => {
         cube.style.top = 95*Math.random() + "%";
         cube.style.left = 100*Math.random() + "%";
         blocks.appendChild(cube);
-    
+
         setTimeout(() => {
             cube.remove();
-        }, 5000);
-
+            console.log("2")
+        }, 4000);
+        
+        console.log("1")
     }
 
-    var animation = setInterval(createCube,  350)
+    let animation = setInterval(createCube,  500)
 
-    const animationStart = (i) => {
-        if (theme === "dark") {
-            animation()
-          } else {
+    const animationStart = async () => {
+        if (theme === true) {
+            window.clearInterval(animation); 
+        
+        } else {
             while (animation--) {
                 window.clearInterval(animation); 
             }
-          }
+        } 
+        
     }
 
     animationStart()
