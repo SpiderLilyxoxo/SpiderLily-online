@@ -21,10 +21,7 @@ const BackGround = (theme) => {
 
         setTimeout(() => {
             cube.remove();
-            console.log("2")
         }, 4000);
-        
-        console.log("1")
     }
 
     let animation = setInterval(createCube,  500)

@@ -47,7 +47,7 @@ const MainContent = () => {
             <div className="about-me__section">About-Me</div>
             <ul className="text__container">
                 <li className="about-me__text">
-                    I am a beginner Front-end specialist from Russia with a passion for learning new technologies for creating and designing websites. After a year of mastering HTML, CSS, Javascript and React, I realized that I want to dedicate my life to this business.
+                    I am frontend specialist from Russia with a passion for learning new technologies for creating and designing websites. After a year of mastering HTML, CSS, Javascript and React, I realized that I want to dedicate my life to this business.
                 </li>
                 <li className="about-me__text">
                     In the past I have had experience with cryptocurrencies, especially with trading and participation in distributions of rare NFTs, such as mekaverse, genopets etc.
