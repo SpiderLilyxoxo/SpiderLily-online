@@ -15,7 +15,7 @@ const EmailContactForm = () => {
         e.preventDefault();
         sendingAnimation();
 
-        emailjs.sendForm('service_r4552gx', 'template_xgado24', form.current, 'Pz1p9fWDYudH97nA7')
+        emailjs.sendForm('', '', form.current, '')
         .then(() => {
             setTimeout(() => {    
                 document.querySelector(".btn.animating").style.display= "none";
